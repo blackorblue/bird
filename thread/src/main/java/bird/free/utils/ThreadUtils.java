@@ -30,11 +30,17 @@ public class ThreadUtils {
     /**
      * 使用ForkJoinPool作为默认线程池
      **/
-    private static ExecutorService EXECUTOR_SERVICE = new ForkJoinPool();
+    private static ExecutorService EXECUTOR_SERVICE;
 
-    private static CompletionService completionService = new ExecutorCompletionService(EXECUTOR_SERVICE);
+    private static CompletionService completionService;
 
     private ThreadUtils() {
+    }
+
+
+    static {
+        EXECUTOR_SERVICE = new ForkJoinPool();
+        completionService = new ExecutorCompletionService(EXECUTOR_SERVICE);
     }
 
     /**
@@ -96,7 +102,12 @@ public class ThreadUtils {
         }
     }
 
-
+    /**
+     * 创建带有指定名称的线程
+     *
+     * @param threadName 线程名称
+     * @return 线程工厂, 用于创建线程池
+     */
     public static ThreadFactory createThreadFactory(String threadName) {
         return new MyThreadFactory(threadName);
     }
@@ -115,10 +126,12 @@ public class ThreadUtils {
         public Thread newThread(Runnable r) {
             try {
                 lock.lock();
-                Thread thread = new Thread(r);
-                String threadName = new StringBuilder().append(THREAD_NAME_PREFIX).append(THREAD_NAME_SEPARATOR).append(threadCount++).toString();
-                thread.setName(threadName);
-                return thread;
+                String threadName = new StringBuilder()
+                        .append(THREAD_NAME_PREFIX)
+                        .append(THREAD_NAME_SEPARATOR)
+                        .append(threadCount++)
+                        .toString();
+                return new Thread(r, threadName);
             } finally {
                 lock.unlock();
             }

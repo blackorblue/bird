@@ -11,10 +11,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author: zhouziyan
- * @review:
  * @Date: 2019/6/13 17:33
  */
-public class Demo {
+public class Demo1 {
     public static void main(String[] args) throws Exception {
         ThreadFactory threadFactory = ThreadUtils.createThreadFactory("my-thread");
         ExecutorService executorService = ThreadUtils.createThreadPool(5, 10, 3000, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(5), threadFactory);
