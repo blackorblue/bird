@@ -81,7 +81,7 @@ public class ThreadUtils {
             return;
         }
         CountDownLatch cdl = new CountDownLatch(tasks.size());
-        List<Exception> exceptions = new ArrayList<>();
+        List<Exception> exceptions = new ArrayList();
         // futures里的顺序和callableList是一致的.
         for (Task task : tasks) {
             TaskWrapper taskWrapper = TaskWrapper.builder(task, cdl, exceptions).build();
@@ -90,7 +90,9 @@ public class ThreadUtils {
         cdl.await();
         if (!exceptions.isEmpty()) {
             // 抛出其中的第一个异常
-            throw exceptions.stream().findFirst().get();
+            throw exceptions.stream()
+                    .findFirst()
+                    .get();
         }
     }
 
