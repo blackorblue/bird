@@ -12,4 +12,7 @@ public class AssertException extends RuntimeException {
     public AssertException(String msg) {
         this.MSG = msg;
     }
+
+
+
 }

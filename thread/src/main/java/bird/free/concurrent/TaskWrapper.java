@@ -5,7 +5,6 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @author: zhouziyan
- * @review:
  * @Date: 2019/6/13 15:58
  */
 public class TaskWrapper implements Runnable {
@@ -13,7 +12,6 @@ public class TaskWrapper implements Runnable {
     private final Task task;
 
     private final CountDownLatch cdl;
-
 
     private final List<Exception> runtimeExceptions;
 

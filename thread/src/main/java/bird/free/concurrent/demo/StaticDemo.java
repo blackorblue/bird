@@ -23,7 +23,6 @@ public class StaticDemo {
     static {
         try {
             Field filed = StaticDemo.class.getDeclaredField("field");
-            filed.setAccessible(true);
             boolean real = filed.getType().getName().equals(String.class.getName());
             if (real) {
                 System.out.println(filed.get(new StaticDemo()));
@@ -40,7 +39,6 @@ public class StaticDemo {
 
     {
         System.out.println(field);
-        field = "普通字段";
         // 构造代码块在对象初始化的之前执行
         System.out.println("我是构造代码块...");
     }
