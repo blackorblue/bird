@@ -1,4 +1,4 @@
-package bird.free.netty.demo.echoserver;
+package bird.free.concurrent.netty.demo.echoserver;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -43,7 +43,6 @@ public class EchoServer {
                     .channel(NioServerSocketChannel.class)
                     .localAddress(new InetSocketAddress(port))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
-
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(echoServerHandler);

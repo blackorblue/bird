@@ -1,7 +1,6 @@
-package bird.free.netty.demo.echoclient;
+package bird.free.concurrent.netty.demo.echoclient;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;

@@ -1,7 +1,7 @@
-package bird.free.demo;
+package bird.free.concurrent.demo;
 
-import bird.free.Task;
-import bird.free.utils.ThreadUtils;
+import bird.free.concurrent.Task;
+import bird.free.concurrent.utils.ThreadUtils;
 
 import java.util.ArrayList;
 

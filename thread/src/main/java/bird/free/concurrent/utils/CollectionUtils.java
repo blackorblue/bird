@@ -1,4 +1,4 @@
-package bird.free.utils;
+package bird.free.concurrent.utils;
 
 import java.util.Collection;
 
