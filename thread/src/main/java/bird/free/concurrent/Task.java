@@ -1,4 +1,4 @@
-package bird.free;
+package bird.free.concurrent;
 /**
  * @author: zhouziyan
  * @review:

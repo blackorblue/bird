@@ -1,4 +1,4 @@
-package bird.free.netty.demo.echoclient;
+package bird.free.concurrent.netty.demo.echoclient;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

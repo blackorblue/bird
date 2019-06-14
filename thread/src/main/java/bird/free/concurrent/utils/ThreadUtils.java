@@ -1,7 +1,8 @@
-package bird.free.utils;
+package bird.free.concurrent.utils;
 
-import bird.free.Task;
-import bird.free.TaskWrapper;
+import bird.free.concurrent.MyThreadFactory;
+import bird.free.concurrent.Task;
+import bird.free.concurrent.TaskWrapper;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -112,29 +113,5 @@ public class ThreadUtils {
         return new MyThreadFactory(threadName);
     }
 
-    private static class MyThreadFactory implements ThreadFactory {
-        final Lock lock = new ReentrantLock();
-        final String THREAD_NAME_PREFIX;
-        int threadCount;
-        final String THREAD_NAME_SEPARATOR = "-";
 
-        public MyThreadFactory(String threadName) {
-            this.THREAD_NAME_PREFIX = threadName;
-        }
-
-        @Override
-        public Thread newThread(Runnable r) {
-            try {
-                lock.lock();
-                String threadName = new StringBuilder()
-                        .append(THREAD_NAME_PREFIX)
-                        .append(THREAD_NAME_SEPARATOR)
-                        .append(threadCount++)
-                        .toString();
-                return new Thread(r, threadName);
-            } finally {
-                lock.unlock();
-            }
-        }
-    }
 }

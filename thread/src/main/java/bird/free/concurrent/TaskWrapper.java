@@ -1,4 +1,4 @@
-package bird.free;
+package bird.free.concurrent;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;

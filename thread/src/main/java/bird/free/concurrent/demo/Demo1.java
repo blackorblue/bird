@@ -1,9 +1,7 @@
-package bird.free.demo;
+package bird.free.concurrent.demo;
 
-import bird.free.utils.ThreadUtils;
+import bird.free.concurrent.utils.ThreadUtils;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadFactory;
