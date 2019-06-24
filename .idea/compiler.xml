@@ -7,14 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="datastructure" />
+        <module name="designpattern" />
         <module name="netty" />
+        <module name="spring-tx-demo" />
         <module name="thread" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bird" target="1.5" />
       <module name="datastructure" target="1.5" />
+      <module name="designpattern" target="1.5" />
       <module name="netty" target="1.5" />
+      <module name="spring-tx-demo" target="1.5" />
       <module name="thread" target="8" />
     </bytecodeTargetLevel>
   </component>

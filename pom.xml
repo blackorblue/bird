@@ -12,6 +12,8 @@
         <module>thread</module>
         <module>netty</module>
         <module>data-structure</module>
+        <module>design-pattern</module>
+        <module>spring-tx-demo</module>
     </modules>
 
 </project>
