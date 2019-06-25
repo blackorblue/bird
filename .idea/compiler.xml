@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="data-structure" />
         <module name="datastructure" />
         <module name="netty" />
         <module name="thread" />
@@ -13,6 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bird" target="1.5" />
+      <module name="data-structure" target="1.5" />
       <module name="datastructure" target="1.5" />
       <module name="netty" target="1.5" />
       <module name="thread" target="8" />

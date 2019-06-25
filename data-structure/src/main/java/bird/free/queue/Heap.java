@@ -58,24 +58,25 @@ public class Heap {
         queue[temp] = queue[--size];
         while (temp < size) {
             int leftChild = (temp + 1) * 2 - 1;
-            int rightChild = (temp + 1) * 2;
+            int rightChild = leftChild + 1;
             Integer tempNode = queue[temp];
-            if (queue[leftChild] < queue[temp]) {
-                queue[temp] = queue[leftChild];
-                queue[leftChild] = tempNode;
-            }
-            if (queue[rightChild] < queue[temp]) {
-                queue[temp] = queue[rightChild];
-                queue[rightChild] = tempNode;
-            }
-            if (queue[leftChild] > queue[rightChild]) {
-                temp = leftChild;
-            } else {
-                temp = rightChild;
-            }
+            Integer minNode = queue[leftChild];
+            // 如果存在右子节点，兄弟节点进行比较，较小的节点与父节点进行比较
+            if (rightChild < size && queue[rightChild] < queue[leftChild])
+                minNode = queue[leftChild = rightChild];
+            if (tempNode < minNode)
+                break;
+            // 交换
+            queue[temp] = minNode;
+            queue[leftChild] = tempNode;
+            temp = leftChild;
         }
 
         return returnNode;
+    }
+
+    public Integer[] toArray() {
+        return queue;
     }
 
 

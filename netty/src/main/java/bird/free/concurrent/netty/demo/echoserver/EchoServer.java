@@ -23,7 +23,7 @@ public class EchoServer {
             return;
         }
         int port = Integer.parseInt(args[0]);
-        new EchoServer(port).start();
+        new EchoServer(94).start();
     }
 
     /**
