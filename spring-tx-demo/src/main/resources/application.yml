@@ -1,0 +1,76 @@
+spring:
+  datasource:
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    url: ${DB_URL:jdbc:mysql://192.168.10.196:10001/ulms?useUnicode=true&characterEncoding=utf8&useSSL=false}
+    druid:
+      filters: stat,wall        # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 1
+      min-idle: 1
+      max-active: 30
+      max-wait: 10000
+      time-between-eviction-runs-millis: 20000        # 配置一个连接在池中生存的时间，单位是毫秒
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 5000
+          merge-sql: true
+      max-pool-prepared-statement-per-connection-size: 20
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      # statViewServlet配置
+      stat-view-servlet:
+        # 是否启用statViewServlet配置
+        enabled: ${DRUID_STAT_VIEW_SERVLET_ENABLED:true}
+        # 访问监控页面
+        url-pattern: ${DRUID_STAT_VIEW_SERVLET_URL:/druid/*}
+        # 禁止手动重置监控数据
+        reset-enable: ${DRUID_STAT_VIEW_SERVLET_RESET:false}
+        # 设置监控页面的登陆名
+        login-username: ${DRUID_STAT_VIEW_SERVLET_USERNAME:admin}
+        # 设置监控页面的登陆密码
+        login-password: ${DRUID_STAT_VIEW_SERVLET_PASSWORD:admin}
+      #WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+      web-stat-filter:
+        # 是否启用WebStatFilter
+        enabled: ${DRUID_WEB_STAT_FILTER:true}
+        # 访问路径
+        url-pattern: ${DRUID_WEB_STAT_URL:/*}
+        # 排除不必要的url
+        exclusions: ${DRUID_WEB_STAT_EXCLUSIONS:*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*}
+        # 是否启用session的统计功能
+        session-stat-enable: ${DRUID_WEB_STAT_SESSION_ENABLE:true}
+        # 监控最大session数，默认是1000
+        session-stat-max-count: ${DRUID_WEB_STAT_MAX_SESSION:1000}
+        # 是否启用监控单个Url调用的sql列表
+        profile-enable: ${DRUID_WEB_STAT_PROFILE_ENABLE:true}
+        # 使druid当前session的用户是谁，session_user_key是你保存到session中的sessionName
+        principalSessionName: ${DRUID_WEB_STAT_PRINCIPALSESSIONNAME:session_user_key}
+        # 使druid只当当前的user是谁,cookie_user_key是你保存在cookie中的cookieName
+        principalCookieName: ${DRUID_WEB_STAT_PRINCIPALCOOKIENAME:cookie_user_key}
+  # 统一utf8 编码
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+mybatis:
+  configuration:
+    # mybatis 下划线转驼峰配置,两者都可以
+    map-underscore-to-camel-case: true
+    # 获取数据库自增主键值 -->
+    use-generated-keys: true
+    # 使用列别名替换列名，默认为 true
+    use-column-label: true
+  type-aliases-package: com.sensin.ulms.model
+  #  xml文件所在位置
+  mapper-locations: classpath:mapper/*.xml
+  #通用mapper的所在接口名称 不只是包名
+  mappers: com.sensin.common.base.mybatis.MyMapper
+  identity: MYSQL
+

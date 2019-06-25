@@ -10,8 +10,9 @@ import bird.free.concurrent.exception.AssertException;
 public class AssertUtils {
 
 
-    public static void isTrue(boolean expression,String msg){
+    public static boolean isTrue(boolean expression,String msg){
          if(!expression)
              throw new AssertException(msg);
+         return expression;
     }
 }
