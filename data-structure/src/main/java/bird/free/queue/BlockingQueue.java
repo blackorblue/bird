@@ -50,10 +50,12 @@ public class BlockingQueue<T> {
         lock.lockInterruptibly();
         try {
             while (size == items.length - 1) {
+                System.out.println("队列满了...");
                 notFull.await();
             }
             items[size++] = t;
             // 队列新增了元素,唤醒notEmpty中挂起的线程.
+            System.out.println("我要进队...");
             notEmpty.signalAll();
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,6 +71,7 @@ public class BlockingQueue<T> {
         try {
             while (size == 0) {
                 // 挂起当前线程.等待唤醒.一直挂起很浪费资源.所以应该挂起一定的时间就中断线程.
+                System.out.println("队列空了...");
                 notEmpty.await();
             }
             ret = (T) items[0];
@@ -76,6 +79,7 @@ public class BlockingQueue<T> {
                 items[i] = items[i + 1];
             }
             items[size--] = null;
+            System.out.println("我要出队...");
             notFull.signalAll();
         } catch (Exception e) {
             e.printStackTrace();

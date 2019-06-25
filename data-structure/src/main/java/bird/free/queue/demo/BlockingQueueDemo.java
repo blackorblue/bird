@@ -1,5 +1,6 @@
 package bird.free.queue.demo;
 
+
 import bird.free.queue.BlockingQueue;
 
 import java.util.concurrent.ExecutorService;
@@ -12,12 +13,24 @@ import java.util.concurrent.Executors;
 public class BlockingQueueDemo {
 
 
-    public static void main(String[] args) {
-        /*ExecutorService executorService = Executors.newFixedThreadPool(10);
-        final BlockingQueue<Integer> queue = new BlockingQueue(10);
+    public static void main(String[] args) throws InterruptedException {
+        final BlockingQueue queue = new BlockingQueue(10);
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 10; i++) {
-            Runnable runnable = () -> queue.enter(i);
-            executorService.submit(() -> queue.enter(i), null);
-        }*/
+            final int finalI = i;
+            executorService.submit(new Runnable() {
+                public void run() {
+                    try {
+                        queue.enter(finalI);
+                    } catch (InterruptedException e) {
+
+                    }
+                }
+            },null);
+        }
+
+        for (int i = 0; i < 11; i++) {
+            System.out.println(queue.poll());
+        }
     }
 }
