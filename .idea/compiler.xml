@@ -9,6 +9,7 @@
         <module name="datastructure" />
         <module name="designpattern" />
         <module name="netty" />
+        <module name="rabbitmq-demo" />
         <module name="spring-tx-demo" />
         <module name="thread" />
       </profile>
@@ -18,6 +19,7 @@
       <module name="datastructure" target="1.5" />
       <module name="designpattern" target="1.5" />
       <module name="netty" target="1.5" />
+      <module name="rabbitmq-demo" target="1.5" />
       <module name="spring-tx-demo" target="1.5" />
       <module name="thread" target="8" />
     </bytecodeTargetLevel>
