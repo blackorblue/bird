@@ -91,10 +91,14 @@ public class ThreadUtils {
         List<Exception> exceptions = new ArrayList();
         // futures里的顺序和callableList是一致的.
         for (Task task : tasks) {
-            TaskWrapper taskWrapper = TaskWrapper.builder(task, cdl, exceptions).build();
+            TaskWrapper taskWrapper = new TaskWrapper.Builder()
+                    .withTask(task)
+                    .withCountDownLatch(cdl)
+                    .withExceptionsMayThrow(exceptions)
+                    .build();
             completionService.submit(taskWrapper, null);
         }
-        cdl.await();
+        cdl.await(); // 无论如何都会执行完整段代码
         if (!exceptions.isEmpty()) {
             // 抛出其中的第一个异常
             throw exceptions.stream()
