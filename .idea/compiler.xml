@@ -16,7 +16,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bird" target="1.5" />
-      <module name="data-structure" target="1.5" />
+      <module name="data-structure" target="7" />
       <module name="datastructure" target="1.5" />
       <module name="design-pattern" target="1.5" />
       <module name="designpattern" target="1.5" />
