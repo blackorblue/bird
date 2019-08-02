@@ -15,6 +15,7 @@
         <module>design-pattern</module>
         <module>spring-tx-demo</module>
         <module>rabbitmq-demo</module>
+        <module>springboot-websocket-demo</module>
     </modules>
 
 </project>

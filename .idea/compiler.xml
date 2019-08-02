@@ -8,10 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="data-structure" />
         <module name="datastructure" />
+        <module name="design-pattern" />
         <module name="designpattern" />
         <module name="netty" />
-        <module name="rabbitmq-demo" />
-        <module name="spring-tx-demo" />
         <module name="thread" />
       </profile>
     </annotationProcessing>
@@ -19,10 +18,12 @@
       <module name="bird" target="1.5" />
       <module name="data-structure" target="1.5" />
       <module name="datastructure" target="1.5" />
+      <module name="design-pattern" target="1.5" />
       <module name="designpattern" target="1.5" />
       <module name="netty" target="1.5" />
       <module name="rabbitmq-demo" target="1.5" />
       <module name="spring-tx-demo" target="1.5" />
+      <module name="springboot-websocket-demo" target="1.5" />
       <module name="thread" target="8" />
     </bytecodeTargetLevel>
   </component>
