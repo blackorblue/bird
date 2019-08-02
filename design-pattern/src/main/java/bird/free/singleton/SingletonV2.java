@@ -13,9 +13,7 @@ public class SingletonV2 {
         if(instance == null){
             synchronized (SingletonV2.class){
                 if(instance == null){
-                    synchronized (SingletonV2.class){
-                        instance = new SingletonV2();
-                    }
+                    instance = new SingletonV2();
                 }
             }
         }
