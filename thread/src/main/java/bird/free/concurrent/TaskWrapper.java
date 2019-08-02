@@ -9,29 +9,58 @@ import java.util.concurrent.CountDownLatch;
  */
 public class TaskWrapper implements Runnable {
 
-    private final Task task;
+    private Task task;
 
-    private final CountDownLatch cdl;
+    private CountDownLatch cdl;
 
-    private final List<Exception> runtimeExceptions;
+    private List<Exception> runtimeExceptions;
 
-    private TaskWrapper(Task task, CountDownLatch cdl,List<Exception> runtimeExceptions) {
-        this.task = task;
-        this.cdl = cdl;
-        this.runtimeExceptions = runtimeExceptions;
+    private long expireTime;
+
+    private TaskWrapper(Builder builder) {
+        this.task = builder.task;
+        this.cdl = builder.cdl;
+        this.runtimeExceptions = builder.runtimeExceptions;
     }
 
-    public static TaskWrapper builder(Task task, CountDownLatch cdl,List<Exception> runtimeExceptions) {
-        return new TaskWrapper(task, cdl,runtimeExceptions);
+    private TaskWrapper() {
     }
 
-    public TaskWrapper build() {
+    public static class Builder {
+        private Task task;
+
+        private CountDownLatch cdl;
+
+        private List<Exception> runtimeExceptions;
+
+        public Builder withTask(Task task) {
+            this.task = task;
+            return this;
+        }
+
+        public Builder withCountDownLatch(CountDownLatch cdl) {
+            this.cdl = cdl;
+            return this;
+        }
+
+        public Builder withExceptionsMayThrow(List<Exception> runtimeExceptions) {
+            this.runtimeExceptions = runtimeExceptions;
+            return this;
+        }
+
+        public TaskWrapper build() {
+            return new TaskWrapper(this);
+        }
+    }
+
+
+    public TaskWrapper setExpireTime(long time) {
+        this.expireTime = time;
         return this;
     }
 
-
     @Override
-    public void run(){
+    public void run() {
         try {
             task.go();
         } catch (Exception e) {

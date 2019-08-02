@@ -7,10 +7,10 @@ package bird.free.concurrent.exception;
  */
 public class AssertException extends RuntimeException {
 
-    private final String MSG;
+    private  String msg;
 
     public AssertException(String msg) {
-        this.MSG = msg;
+        this.msg = msg;
     }
 
 

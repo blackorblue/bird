@@ -16,9 +16,9 @@ public class BlockingQueueDemo {
     public static void main(String[] args) throws InterruptedException {
         final BlockingQueue queue = new BlockingQueue(10);
         ExecutorService executorService = Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 11; i++) {
             final int finalI = i;
-            executorService.submit(new Runnable() {
+            executorService.execute(new Runnable() {
                 public void run() {
                     try {
                         queue.enter(finalI);
@@ -26,11 +26,9 @@ public class BlockingQueueDemo {
 
                     }
                 }
-            },null);
+            });
         }
-
-        for (int i = 0; i < 11; i++) {
-            System.out.println(queue.poll());
-        }
+        Thread.sleep(1000L);
+        System.out.println(queue.poll());
     }
 }
