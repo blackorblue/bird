@@ -3,7 +3,7 @@ package bird.free.abstractfactory;
 /**
  * @author freebird
  */
-public abstract class AbstractHumanFactory {
+public  interface AbstractHumanFactory {
 
-    public abstract Human createHuman();
+      Human createHuman();
 }
