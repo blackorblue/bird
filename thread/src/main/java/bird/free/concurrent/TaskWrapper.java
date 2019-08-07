@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author: zhouziyan
- * @Date: 2019/6/13 15:58
+ * @author zhouziyan
+ * @Date 2019/6/13 15:58
  */
 public class TaskWrapper implements Runnable {
 

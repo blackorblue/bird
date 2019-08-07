@@ -12,9 +12,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author: zhouziyan
- * @review:
- * @Date: 2019/6/6 15:56
+ * @author zhouziyan
+ * @Date 2019/6/6 15:56
  */
 public class ThreadUtils {
 
