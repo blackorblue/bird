@@ -1,4 +1,4 @@
-package chain;
+package bird.free.chain;
 
 public abstract class AbstractHandler {
 

@@ -1,4 +1,4 @@
-package chain;
+package bird.free.chain;
 
 public class SecondHandler extends AbstractHandler {
 
