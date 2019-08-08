@@ -1,9 +1,12 @@
 package bird.free.chain;
 
+/**
+ * @author freebird
+ */
 public abstract class AbstractHandler {
 
     private AbstractHandler nextHandler;
-    private   int level = 1;
+    private   int level;
 
     public AbstractHandler(int level) {
         this.level = level;
