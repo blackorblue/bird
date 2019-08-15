@@ -5,5 +5,7 @@ package bird.free.abstractfactory;
  */
 public  interface AbstractHumanFactory {
 
-      Human createHuman();
+      Human createChineseHuman();
+
+      Human createBritishHuman();
 }

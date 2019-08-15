@@ -8,6 +8,7 @@ public class Test {
 
     public static void main(String[] args) {
         DynamicProxy dynamicProxy = new DynamicProxy(new PersonallyRentingHouse());
+        Proxy.newProxyInstance(DynamicProxy.class.getClassLoader(),null,dynamicProxy);
        // Proxy.newProxyInstance(DynamicProxy.class.getClassLoader(),{},)
     }
 }
