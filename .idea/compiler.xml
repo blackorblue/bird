@@ -6,22 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="data-structure" />
-        <module name="datastructure" />
         <module name="design-pattern" />
-        <module name="designpattern" />
         <module name="netty" />
         <module name="thread" />
+        <module name="datastructure" />
+        <module name="rocketmq-demo2" />
+        <module name="data-structure" />
+        <module name="designpattern" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bird" target="1.5" />
       <module name="data-structure" target="7" />
       <module name="datastructure" target="1.5" />
-      <module name="design-pattern" target="1.5" />
+      <module name="design-pattern" target="7" />
       <module name="designpattern" target="1.5" />
-      <module name="netty" target="1.5" />
+      <module name="netty" target="6" />
       <module name="rabbitmq-demo" target="1.5" />
+      <module name="rocketMQ-demo" target="1.5" />
+      <module name="rocketmq-demo2" target="6" />
       <module name="spring-tx-demo" target="1.5" />
       <module name="springboot-websocket-demo" target="1.5" />
       <module name="thread" target="8" />

@@ -13,6 +13,7 @@
         <module>netty</module>
         <module>data-structure</module>
         <module>design-pattern</module>
+        <module>rocketmq-demo2</module>
     </modules>
 
 

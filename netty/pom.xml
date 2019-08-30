@@ -16,7 +16,14 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.11.Final</version>
-        </dependency>
+        </dependency> <dependency>
+
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.6</version>
+        <optional>true</optional>
+    </dependency>
+
     </dependencies>
 
 
@@ -36,10 +43,18 @@
                             also adding the project build directory -->
                         <argument>-classpath</argument> <!-- 这是classpath属性，其值就是下面的<classpath/> -->
                         <classpath/> <!-- 这是exec插件最有价值的地方，关于工程的classpath并不需要手动指定，它将由exec自动计算得出 -->
-                        <argument>bird.free.concurrent.netty.demo.echoserver.EchoServer</argument> <!-- 程序入口，主类名称 -->
+                        <argument>bird.free.netty.echoserver.EchoServer</argument> <!-- 程序入口，主类名称 -->
                         <argument>127.0.0.1</argument> <!-- 程序的第一个命令行参数 -->
                         <argument>94</argument> <!-- 程序的第二个命令行参数 -->
                     </arguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
                 </configuration>
             </plugin>
         </plugins>

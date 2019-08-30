@@ -1,4 +1,4 @@
-package bird.free.concurrent.netty.demo.echoserver;
+package bird.free.netty.echoserver;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -12,19 +12,9 @@ import java.net.InetSocketAddress;
 
 public class EchoServer {
 
-    private final int port;
+    private final int port = 80;
 
-    public EchoServer(int port) {
-        this.port = port;
-    }
 
-    public static void main(String[] args) throws InterruptedException {
-        if (args.length != 1) {
-            return;
-        }
-        int port = Integer.parseInt(args[0]);
-        new EchoServer(94).start();
-    }
 
     /**
      * 使用NIO作为网络的IO方式

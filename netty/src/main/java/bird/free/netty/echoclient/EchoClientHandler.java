@@ -1,5 +1,7 @@
-package bird.free.concurrent.netty.demo.echoclient;
+package bird.free.netty.echoclient;
 
+import bird.free.netty.constant.ChatConstants;
+import bird.free.netty.domain.Msg;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandler;
@@ -8,7 +10,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
 
 @ChannelHandler.Sharable
-public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
+public class EchoClientHandler extends SimpleChannelInboundHandler<Msg> {
 
     /**
      * 当从服务器接收到一条消息时会调用
@@ -17,8 +19,15 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
      * @throws Exception
      */
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
-        System.out.println("client received:"+msg.toString(CharsetUtil.UTF_8));
+    protected void channelRead0(ChannelHandlerContext ctx, Msg msg) throws Exception {
+        System.out.println("client received:"+msg.getContent());
+        if(msg.getContent().equals(ChatConstants.C1)){
+            ctx.writeAndFlush(Msg.builder().content(ChatConstants.S1).build());
+        }else if(msg.getContent().equals(ChatConstants.C2)){
+            ctx.writeAndFlush(Msg.builder().content(ChatConstants.S2).build());
+        }else if(msg.getContent().equals(ChatConstants.C3)){
+            ctx.writeAndFlush(Msg.builder().content(ChatConstants.S3).build());
+        }
     }
 
     @Override
