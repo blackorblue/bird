@@ -14,6 +14,7 @@
         <module>data-structure</module>
         <module>design-pattern</module>
         <module>rocketmq-demo2</module>
+        <module>geektime-rpc</module>
     </modules>
 
 

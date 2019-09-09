@@ -7,12 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="design-pattern" />
-        <module name="netty" />
-        <module name="thread" />
+        <module name="designpattern" />
+        <module name="data-structure" />
+        <module name="geektime-rpc" />
         <module name="datastructure" />
         <module name="rocketmq-demo2" />
-        <module name="data-structure" />
-        <module name="designpattern" />
+        <module name="netty" />
+        <module name="thread" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
       <module name="datastructure" target="1.5" />
       <module name="design-pattern" target="7" />
       <module name="designpattern" target="1.5" />
+      <module name="geektime-rpc" target="1.5" />
       <module name="netty" target="6" />
       <module name="rabbitmq-demo" target="1.5" />
       <module name="rocketMQ-demo" target="1.5" />
