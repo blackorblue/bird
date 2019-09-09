@@ -15,6 +15,7 @@
         <module>design-pattern</module>
         <module>rocketmq-demo2</module>
         <module>geektime-rpc</module>
+        <module>jvm-demo</module>
     </modules>
 
 
