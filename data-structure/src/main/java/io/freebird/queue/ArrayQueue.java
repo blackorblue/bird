@@ -3,7 +3,7 @@ package io.freebird.queue;
 
 /**
  * @author: zhouziyan
- * @Date: 2019/6/14 11:43
+ * @date: 2019/6/14 11:43
  */
 public class ArrayQueue<T> {
 

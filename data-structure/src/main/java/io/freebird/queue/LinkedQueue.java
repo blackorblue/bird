@@ -5,7 +5,7 @@ package io.freebird.queue;
  * 无界队列
  *
  * @author: zhouziyan
- * @Date: 2019/6/14 12:31
+ * @date: 2019/6/14 12:31
  */
 public class LinkedQueue<E> {
 

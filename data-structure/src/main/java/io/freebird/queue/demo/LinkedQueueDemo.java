@@ -5,7 +5,7 @@ import io.freebird.queue.LinkedQueue;
 /**
  * @author: zhouziyan
  * @review:
- * @Date: 2019/6/14 15:15
+ * @date: 2019/6/14 15:15
  */
 public class LinkedQueueDemo {
 

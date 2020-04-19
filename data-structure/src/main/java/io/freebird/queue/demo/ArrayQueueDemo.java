@@ -5,7 +5,7 @@ import io.freebird.queue.ArrayQueue;
 /**
  * @author: zhouziyan
  * @review:
- * @Date: 2019/6/14 12:19
+ * @date: 2019/6/14 12:19
  */
 public class ArrayQueueDemo {
 

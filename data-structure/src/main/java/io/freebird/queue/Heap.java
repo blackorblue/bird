@@ -4,7 +4,7 @@ package io.freebird.queue;
  * 堆/优先队列的简单实现
  *
  * @author: zhouziyan
- * @Date: 2019/6/14 15:30
+ * @date: 2019/6/14 15:30
  */
 public class Heap {
 
