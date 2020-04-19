@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>bird</artifactId>
-        <groupId>free</groupId>
+        <artifactId>freebird</artifactId>
+        <groupId>io</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -43,7 +43,7 @@
                             also adding the project build directory -->
                         <argument>-classpath</argument> <!-- 这是classpath属性，其值就是下面的<classpath/> -->
                         <classpath/> <!-- 这是exec插件最有价值的地方，关于工程的classpath并不需要手动指定，它将由exec自动计算得出 -->
-                        <argument>bird.free.netty.echoserver.EchoServer</argument> <!-- 程序入口，主类名称 -->
+                        <argument>io.freebird.netty.echoserver.EchoServer</argument> <!-- 程序入口，主类名称 -->
                         <argument>127.0.0.1</argument> <!-- 程序的第一个命令行参数 -->
                         <argument>94</argument> <!-- 程序的第二个命令行参数 -->
                     </arguments>

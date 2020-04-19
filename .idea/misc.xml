@@ -11,11 +11,15 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/geektime-rpc/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-demo/pom.xml" />
         <option value="$PROJECT_DIR$/rocketMQ-demo/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-websocket-demo/pom.xml" />
       </set>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/thread/src/main/java/ArrayBlockingQueue与LinkedBlockingQueue.md" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

@@ -4,17 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>free</groupId>
-    <artifactId>bird</artifactId>
+    <groupId>io</groupId>
+    <artifactId>freebird</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+       <rocketmq.version>4.4.0</rocketmq.version>
+    </properties>
     <modules>
         <module>thread</module>
         <module>netty</module>
         <module>data-structure</module>
         <module>design-pattern</module>
         <module>rocketmq-demo2</module>
-        <module>geektime-rpc</module>
         <module>jvm-demo</module>
     </modules>
 
