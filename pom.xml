@@ -11,6 +11,8 @@
 
     <properties>
        <rocketmq.version>4.4.0</rocketmq.version>
+       <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
+       <dubbo.version>2.6.8</dubbo.version>
     </properties>
     <modules>
         <module>thread</module>
@@ -19,7 +21,15 @@
         <module>design-pattern</module>
         <module>rocketmq-demo2</module>
         <module>jvm-demo</module>
+        <module>spring-cloud-alibaba-demo</module>
     </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
 
 </project>

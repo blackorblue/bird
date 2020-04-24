@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/jvm-demo/jvm-demo.iml" filepath="$PROJECT_DIR$/jvm-demo/jvm-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/rocketmq-demo2/rocketmq-demo2.iml" filepath="$PROJECT_DIR$/rocketmq-demo2/rocketmq-demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-alibaba-demo/spring-cloud-alibaba-demo.iml" filepath="$PROJECT_DIR$/spring-cloud-alibaba-demo/spring-cloud-alibaba-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/thread/thread.iml" filepath="$PROJECT_DIR$/thread/thread.iml" />
     </modules>
   </component>
